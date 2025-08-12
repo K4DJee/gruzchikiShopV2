@@ -450,9 +450,6 @@
   .min-h-\[745px\] {
     min-height: 745px;
   }
-  .min-h-\[748px\] {
-    min-height: 748px;
-  }
   .w-2 {
     width: calc(var(--spacing) * 2);
   }
@@ -901,6 +898,15 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .whitespace-break-spaces {
+    white-space: break-spaces;
+  }
+  .whitespace-normal {
+    white-space: normal;
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
   }
   .text-\[\#FFDB56\] {
     color: #FFDB56;
