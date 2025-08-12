@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900');
+@import "tailwindcss";
+:root{
+  scroll-behavior: smooth;
+}
+.sidebar-container {
+    transform: translateX(100%); /* полностью за экраном справа */
+    transition: transform 0.3s ease-in-out; /* плавная анимация */
+  }
+  
+  .sidebar-container.open {
+    transform: translateX(0); /* сдвигаем на своё место */
+  }
+
+h2{
+    font-family: 'Roboto';
+}
+a{
+    font-family: 'Roboto';
+}
+p, button, input{
+    font-family: 'Roboto';
+}
+
+.custom-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #FFDB56; /* жёлтая обводка */
+  border-radius: 50%;
+  background-color: #fff; /* белый фон */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Внутренний кружок при выборе */
+.custom-radio:checked::before {
+  content: '';
+  width: 7.5px;
+  height: 7.5px;
+  border-radius: 50%;
+  background-color: #FFDB56;
+}
+
+body.modal-open {
+  overflow: hidden;
+  padding-right: 17px; /* Примерно ширина скроллбара */
+}
+
+.input-error{
+  @apply ring-1 ring-red-500 border-red-500;
+}

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header class="w-full bg-white border border-b-gray-200 shadow-xs">
+      <div
+        class="relative max-w-[1440px] h-[75px] m-auto p-5 flex justify-between items-center"
+      >
+        <a class="w-[150px] md:w-[175px]" href="./index.html">
+          <img
+            class="w-[150px] md:w-[175px]"
+            src="../imgs/newlogo.png"
+            alt=""
+          />
+        </a>
+
+        <ul class="hidden md:flex">
+          <li class="p-5 cursor-pointer group relative">
+            <h2
+              class="group-hover:text-orange-400 text-sm md:text-base lg:text-lg transition-colors"
+            >
+              Услуги
+              <span class="arrow">▾</span>
+            </h2>
+            <div
+              class="absolute flex group-hover:opacity-100 justify-between flex-wrap bg-white p-2.5 border border-gray-200 rounded-xl z-10 top-[50px] left-0 w-[500px] h-auto gap-y-2.5 opacity-0 transition-all
+              pointer-events-none group-hover:pointer-events-auto "
+            >
+              <a
+                class="hover:text-gray-500 hover:border-gray-500  border border-orange-400 py-2.5 rounded-lg font-medium w-[235px] text-center transition-colors"
+                href="/src/kvartirniy-pereezd.html"
+                >Квартирный переезд</a
+              >
+              <a
+                class="hover:text-gray-500 hover:border-gray-500  border border-orange-400 py-2.5 rounded-lg font-medium w-[235px] text-center transition-colors"
+                href="/src/ofisniy-pereezd.html"
+                >Офисный переезд</a
+              >
+              <a
+                class="hover:text-gray-500 hover:border-gray-500  border border-orange-400 py-2.5 rounded-lg font-medium w-[235px] text-center transition-colors"
+                href="/src/sborka-mebeli.html"
+                >Сборка мебели</a
+              >
+              <a
+                class="hover:text-gray-500 hover:border-gray-500  border border-orange-400 py-2.5 rounded-lg font-medium w-[235px] text-center transition-colors"
+                href="/src/sbor-i-vyvoz-metalloloma.html"
+                >Сбор и вывоз металлолома</a
+              >
+              <a
+                class="hover:text-gray-500 hover:border-gray-500  border border-orange-400 py-2.5 rounded-lg font-medium w-[235px] text-center transition-colors"
+                href="/src/demontazh.html"
+                >Демонтаж конструкций</a
+              >
+              <a
+                class="hover:text-gray-500 hover:border-gray-500  border border-orange-400 py-2.5 rounded-lg font-medium w-[235px] text-center transition-colors"
+                href="/src/vynos-musora.html"
+                >Вынос мусора</a
+              >
+            </div>
+          </li>
+          <li class="p-5 cursor-pointer group">
+            <a href="/src/index.html#prices-section">
+            <h2
+              class="group-hover:text-orange-400 text-sm md:text-base lg:text-lg transition-colors"
+            >
+              Цены
+            </h2>
+          </a>
+          </li>
+          <li class="p-5 cursor-pointer group">
+            <a href="/src/about.html">
+            <h2
+              class="group-hover:text-orange-400 text-sm md:text-base lg:text-lg transition-colors"
+            >
+              О компании
+            </h2>
+            </a>
+          </li>
+          <li class="p-5 cursor-pointer group">
+            <a href="/src/index.html#reviews-section">
+            <h2
+              class="group-hover:text-orange-400 text-sm md:text-base lg:text-lg transition-colors"
+            >
+              Отзывы
+            </h2>
+          </a>
+          </li>
+          <li class="p-5 cursor-pointer group">
+            <a href="/src/index.html#contacts-section">
+            <h2
+              class="group-hover:text-orange-400 text-sm md:text-base lg:text-lg transition-colors"
+            >
+              Контакты
+            </h2>
+            </a>
+          </li>
+        </ul>
+
+        <button
+          onclick="openSidebar()"
+          id="sidebar_button"
+          class="absolute md:hidden flex size-[30px] right-5 rounded-sm cursor-pointer justify-center items-center"
+        >
+          <svg
+            height="19"
+            width="26"
+            fill="none"
+            viewBox="0 0 26 19"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24.416 16.0381C25.0591 16.0383 25.5809 16.56 25.5811 17.2031C25.5811 17.8464 25.0592 18.3679 24.416 18.3682H1.35645C0.713034 18.3682 0.191406 17.8465 0.191406 17.2031C0.191558 16.5598 0.713127 16.0381 1.35645 16.0381H24.416ZM24.416 10.5039C25.0592 10.5041 25.581 11.0257 25.5811 11.6689C25.5811 12.3122 25.0592 12.8337 24.416 12.834H1.35645C0.713034 12.834 0.191406 12.3124 0.191406 11.6689C0.191478 11.0256 0.713078 10.5039 1.35645 10.5039H24.416ZM24.416 5.8916C25.0591 5.89184 25.5808 6.41357 25.5811 7.05664C25.5811 7.69991 25.0592 8.22145 24.416 8.22168H1.35645C0.713034 8.22168 0.191406 7.70005 0.191406 7.05664C0.19164 6.41343 0.713178 5.8916 1.35645 5.8916H24.416ZM24.416 0.357422C25.0591 0.357656 25.5809 0.879325 25.5811 1.52246C25.5811 2.16573 25.0592 2.68727 24.416 2.6875H1.35645C0.713034 2.6875 0.191406 2.16587 0.191406 1.52246C0.191561 0.87918 0.713129 0.357422 1.35645 0.357422H24.416Z"
+              fill="#99A1AF"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="max-full h-auto bg-black">
+        <div
+          class="max-w-[1440px] h-full m-auto p-5 flex flex-wrap lg:flex-nowrap gap-5 justify-center lg:justify-between items-center"
+        >
+          <a href="https://www.google.com/maps/place/%D0%94%D1%83%D0%B1%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D1%83%D0%BB.,+79+%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81+5,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+127591/data=!4m2!3m1!1s0x46b53761bb287003:0x9b085cb4495d0410?sa=X&ved=1t:242&ictx=111" class="lg:w-1/3 flex justify-center items-center gap-1">
+            <svg
+              class="size-[18px]"
+              height="56"
+              width="58"
+              fill="none"
+              viewBox="0 0 58 56"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M37.2861 0C38.3847 0.000107159 39.438 0.421831 40.2148 1.17188C40.9918 1.92202 41.4287 2.93913 41.4287 4V20H53.8574C54.956 20.0001 56.0093 20.4218 56.7861 21.1719C57.5631 21.922 58 22.9391 58 24V56H0V4C0 2.93913 0.436931 1.92202 1.21387 1.17188C1.99073 0.421843 3.04396 7.13185e-05 4.14258 0H37.2861ZM4.14258 4V52H37.2861V4H4.14258ZM41.4287 24V52H53.8574V24H41.4287ZM18 44H12V36H18V44ZM30 44H24V36H30V44ZM18 32H12V24H18V32ZM30 32H24V24H30V32ZM18 20H12V12H18V20ZM30 20H24V12H30V20Z"
+                fill="#FEFF00"
+              />
+            </svg>
+            <h2
+              class="text-[#feff00] text-[15px] md:text-base text-center font-medium"
+            >
+              г.Москва, ул. Дубнинская 79 корпус 5
+            </h2>
+          </a>
+          <a href="tel:+79099421050" class="lg:w-1/3 flex gap-0.5 justify-center items-center">
+            <svg
+              class="size-[18px]"
+              fill="#feff00"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path
+                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm90.7 96.7c9.7-2.6 19.9 2.3 23.7 11.6l20 48c3.4 8.2 1 17.6-5.8 23.2L168 231.7c16.6 35.2 45.1 63.7 80.3 80.3l20.2-24.7c5.6-6.8 15-9.2 23.2-5.8l48 20c9.3 3.9 14.2 14 11.6 23.7l-12 44C336.9 378 329 384 320 384C196.3 384 96 283.7 96 160c0-9 6-16.9 14.7-19.3l44-12z"
+              />
+            </svg>
+            <h2
+              class="text-[#feff00] text-[15px] md:text-base text-center font-medium"
+            >
+              +7-909-942-10-50
+            </h2>
+          </a>
+          <a href="#" class="lg:w-1/3 flex gap-1 justify-center items-center">
+            <svg
+              class="size-[18px]"
+              aria-hidden="true"
+              data-prefix="fas"
+              data-icon="mail-bulk"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512"
+              class="svg-inline--fa fa-mail-bulk fa-w-18 fa-7x"
+            >
+              <path
+                fill="#feff00"
+                d="M160 448c-25.6 0-51.2-22.4-64-32-64-44.8-83.2-60.8-96-70.4V480c0 17.67 14.33 32 32 32h256c17.67 0 32-14.33 32-32V345.6c-12.8 9.6-32 25.6-96 70.4-12.8 9.6-38.4 32-64 32zm128-192H32c-17.67 0-32 14.33-32 32v16c25.6 19.2 22.4 19.2 115.2 86.4 9.6 6.4 28.8 25.6 44.8 25.6s35.2-19.2 44.8-22.4c92.8-67.2 89.6-67.2 115.2-86.4V288c0-17.67-14.33-32-32-32zm256-96H224c-17.67 0-32 14.33-32 32v32h96c33.21 0 60.59 25.42 63.71 57.82l.29-.22V416h192c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zm-32 128h-64v-64h64v64zm-352-96c0-35.29 28.71-64 64-64h224V32c0-17.67-14.33-32-32-32H96C78.33 0 64 14.33 64 32v192h96v-32z"
+                class=""
+              ></path>
+            </svg>
+            <h2
+              class="text-[#feff00] text-[15px] md:text-base text-center font-medium"
+            >
+              Garbazhnik@mail.ru
+            </h2>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main class="">
+      <!--about-section-->
+      <div class="max-w-[1440px] m-auto p-5 mt-10 flex h-auto gap-10 justify-between xl:bg-none bg-[url(../imgs/img1.png)] bg-center">
+        <div class="xl:max-w-[725px]">
+          <div class="w-full flex justify-center">
+            <h2 class="w-fit  text-xs sm:text-base px-2.5 bg-black text-white rounded-sm">Более 3 лет опыта · аккуратное обращение с грузом · 24/7</h2>
+          </div>
+          <h2 class="text-2xl sm:text-4xl md:text-6xl text-white lg:text-8xl xl:text-gray-800 font-semibold">Грузоперевозки и переезды в Москве</h2>
+          <p class="text-gray-200 xl:text-gray-500 text-lg">Профессиональные услуги грузчиков, квартирный переезд, сборка мебели, демонтаж, вынос мусора, сбор и вывоз металлолома</p>
+          <div class="flex mt-25 justify-end gap-5 flex-wrap ">
+            <a href="index.html#leave-a-request">
+            <button class="text-xs sm:text-sm md:text-base hover:translate-y-[-5px] hover:shadow-xl flex items-center gap-1.25 py-2.5 px-5 bg-[#feff00] shadow-lg rounded-xl cursor-pointer font-medium transition-all ">
+              <span><svg class="size-[12px] sm:size-[15px]" aria-hidden="true" class="e-font-icon-svg e-fas-box" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M509.5 184.6L458.9 32.8C452.4 13.2 434.1 0 413.4 0H272v192h238.7c-.4-2.5-.4-5-1.2-7.4zM240 0H98.6c-20.7 0-39 13.2-45.5 32.8L2.5 184.6c-.8 2.4-.8 4.9-1.2 7.4H240V0zM0 224v240c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224H0z"></path></svg></span>
+              Заказать услугу 
+            </button></a>
+            <a href="index.html#prices-section">
+            <button class="text-xs sm:text-sm md:text-base hover:translate-y-[-5px] hover:shadow-xl text-white flex items-center gap-1.25 py-2.5 px-5 bg-blue-400 shadow-lg rounded-xl cursor-pointer font-medium transition-all">
+              <span><svg class="size-[12px] sm:size-[16px]" height="21" width="13" fill="none" viewBox="0 0 13 21" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.8833 9.92989L4.10401 8.56817C3.45473 8.3836 2.92872 7.86269 2.82599 7.19414C2.66572 6.15235 3.47527 5.25 4.49031 5.25H7.52308C8.17648 5.25 8.81754 5.45507 9.34767 5.82832C9.61067 6.01289 9.96408 5.98418 10.1901 5.7586L11.1312 4.81933C11.4106 4.54043 11.3818 4.07285 11.0695 3.83086C10.0545 3.04746 8.82166 2.625 7.52308 2.625H7.40802V0.65625C7.40802 0.295312 7.11213 0 6.75051 0H5.43549C5.07385 0 4.77796 0.295312 4.77796 0.65625V2.625H4.67523C2.65339 2.625 0.787699 3.92929 0.302786 5.88985C-0.268426 8.19493 1.13289 10.4508 3.30267 11.0701L8.08196 12.4318C8.73125 12.6164 9.25726 13.1373 9.35999 13.8059C9.52025 14.8476 8.7107 15.75 7.69568 15.75H4.6629C4.00951 15.75 3.36844 15.5449 2.8383 15.1717C2.5753 14.9871 2.22189 15.0158 1.99588 15.2414L1.05481 16.1807C0.775372 16.4596 0.804138 16.9271 1.11646 17.1691C2.12737 17.9525 3.36021 18.375 4.6629 18.375H4.77796V20.3437C4.77796 20.7047 5.07385 21 5.43549 21H6.75051C7.11213 21 7.40802 20.7047 7.40802 20.3437V18.375H7.51074C9.53259 18.375 11.3983 17.0707 11.8832 15.1101C12.4544 12.8051 11.0531 10.5492 8.8833 9.92989Z" fill="white"/>
+              </svg></span>
+              Узнать стоимость</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="w-[500px] hidden xl:block">
+          <img class="w-[500px] rounded-3xl" src="../imgs/ChatGPT Image 5 авг. 2025 г., 17_23_15.png" alt="">
+        </div>
+      </div>
+
+      <!--own-info-section-->
+    <div class="w-[1440px] m-auto py-25 px-2.5">
+      <h2 class="font-medium text-4xl">Немного о нас</h2>
+      <h2 class="text-xl text-gray-500">Мы работаем уже больше 3 лет и имеем большой опыт в предоставлении услуг грузчиков и не только их. Все наши услуги вы увидите ниже. Компания "Грузчики Shop" оказывает свои услуги только в пределах Москвы. Мы не работаем в Московской области.</h2>
+      <h2 class="font-medium text-gray-500 text-2xl">Работаем с <i class="text-[#FFDB56] bg-gray-500 px-1 rounded-sm">9:00</i> до <i class="text-[#FFDB56] bg-gray-500 px-1 rounded-sm">21:00</i></h2>
+    </div>
+
+      <!--services-section-->
+      <div class="mt-5 max-w-[1440px] m-auto p-10">
+        <h2 class="text-center font-medium text-3xl sm:text-4xl">Наши услуги</h2>
+        <p class="text-center text-gray-500">Полный комплекс услуг по грузоперевозкам и других услуг</p>
+        <ul class="mt-10 flex justify-center flex-wrap gap-5">
+          <a href="/src/kvartirniy-pereezd.html">
+          <li class="w-[340px] p-2.5 cursor-pointer hover:bg-black/10 active:bg-black/10 group rounded-xl transition-colors">
+            <div class="group-hover:bg-yellow-200 group-active:bg-yellow-200 size-[65px] not-sm:size-[55px] bg-yellow-100 rounded-full flex items-center justify-center transition-colors">
+              <svg class="size-[30px] not-sm:size-[25px]" fill="" width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M22,1H10A1,1,0,0,0,9,2V7H2A1,1,0,0,0,1,8V22a1,1,0,0,0,1,1H22a1,1,0,0,0,1-1V2A1,1,0,0,0,22,1ZM3,9H9V21H3ZM21,21H11V3H21ZM19,7H13V5h6Zm0,4H13V9h6Zm0,4H13V13h6Zm0,4H13V17h6ZM5,10H7v2H5Zm0,4H7v2H5Zm0,4H7v2H5Z"></path></g></svg>
+            </div>
+            <div class="mt-2.5">
+              <h2 class="font-semibold ">Квартирный переезд</h2>
+              <p class="text-gray-500 text-sm">Профессиональный переезд квартир любой сложности с упаковкой и транспортом</p>
+            </div>
+          </li>
+          </a>
+          <a href="/src/ofisniy-pereezd.html">
+            <li class="w-[340px] p-2.5 cursor-pointer hover:bg-black/10 active:bg-black/10 group rounded-xl transition-colors">
+              <div class="group-hover:bg-yellow-200 group-active:bg-yellow-200 size-[65px] not-sm:size-[55px] bg-yellow-100 rounded-full flex items-center justify-center transition-colors">
+                <svg class="size-[30px] not-sm:size-[25px]" fill="" width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M22,1H10A1,1,0,0,0,9,2V7H2A1,1,0,0,0,1,8V22a1,1,0,0,0,1,1H22a1,1,0,0,0,1-1V2A1,1,0,0,0,22,1ZM3,9H9V21H3ZM21,21H11V3H21ZM19,7H13V5h6Zm0,4H13V9h6Zm0,4H13V13h6Zm0,4H13V17h6ZM5,10H7v2H5Zm0,4H7v2H5Zm0,4H7v2H5Z"></path></g></svg>
+              </div>
+              <div class="mt-2.5">
+                <h2 class="font-semibold ">Офисный переезд</h2>
+                <p class="text-gray-500 text-sm">Переезд вашего офиса любой сложности</p>
+              </div>
+            </li>
+            </a>
+            <a href="/src/sborka-mebeli.html">
+          <li class="group w-[340px] p-2.5 cursor-pointer hover:bg-black/10 active:bg-black/10 rounded-xl transition-colors">
+            <div class="group-hover:bg-yellow-200 group-active:bg-yellow-200 size-[65px] not-sm:size-[55px] bg-yellow-100 rounded-full flex items-center justify-center transition-colors">
+              <svg class="size-[30px] not-sm:size-[25px]" width="64px" height="64px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><path class="cls-1" d="M12,8.2v5.73H5.32V12a1,1,0,0,0-1-.95h-1V8.2A2.87,2.87,0,0,1,6.27,5.34H9.14A2.87,2.87,0,0,1,12,8.2Z"></path><path class="cls-1" d="M21.55,11.07H19.64a1,1,0,0,0-1,.95v1.91H5.32V12a1,1,0,0,0-1-.95H2.45a1,1,0,0,0-1,.95v5.73h21V12A1,1,0,0,0,21.55,11.07Z"></path><path class="cls-1" d="M20.59,8.2v2.87h-.95a1,1,0,0,0-1,.95v1.91H12V8.2a2.87,2.87,0,0,1,2.86-2.86h2.87A2.87,2.87,0,0,1,20.59,8.2Z"></path><line class="cls-1" x1="2.45" y1="19.66" x2="2.45" y2="17.75"></line><line class="cls-1" x1="20.59" y1="19.66" x2="20.59" y2="17.75"></line></g></svg>
+            </div>
+            <div class="mt-2.5">
+              <h2 class="font-semibold">Сборка мебели</h2>
+              <p class="text-gray-500 text-sm">Быстрая и качественная сборка мебели</p>
+            </div>
+          </li>
+          </a>
+          <a href="/src/sbor-i-vyvoz-metalloloma.html">
+          <li class="group w-[340px] p-2.5 cursor-pointer hover:bg-black/10 active:bg-black/10 rounded-xl transition-colors">
+            <div class="group-hover:bg-yellow-200 group-active:bg-yellow-200 size-[65px] not-sm:size-[55px] bg-yellow-100 rounded-full flex items-center justify-center transition-colors">
+              <svg class="size-[30px] not-sm:size-[25px]" width="64px" height="64px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#000000" d="M322.248 85.684L61.432 224.717l-41.145 109.94 7.233 3.85 153.673 81.8 308.495-164.215-37.752-99.903-129.688-70.506zm119.035 95.187l25.11 66.45-102.56 54.594L430.39 186.64l10.893-5.77zm-89.576 47.417L284.957 343.9l-41.67 22.182 72.195-118.62 36.225-19.175zM72.38 248.78l28.21 14.933-54.012 54.012L72.38 248.78zm210.827 15.767L211.19 382.87l.26.16-17.208 9.16 5.795-83.618 83.17-44.025zm-165.334 8.312l16.963 8.98-60.445 60.445-16.93-9.012 60.413-60.414zM181.42 306.9l-6.174 89.07-54.1-28.798 60.274-60.272z"></path></g></svg>
+            </div>
+            <div class="mt-2.5">
+              <h2 class="font-semibold">Сбор и вывоз металлолома</h2>
+              <p class="text-gray-500 text-sm">Быстрая и качественная сборка мебели</p>
+            </div>
+          </li>
+        </a>
+        <a href="/src/demontazh.html">
+          <li class="group w-[340px] p-2.5 cursor-pointer hover:bg-black/10 active:bg-black/10 rounded-xl transition-colors">
+            <div class="group-hover:bg-yellow-200 group-active:bg-yellow-200 size-[65px] not-sm:size-[55px] bg-yellow-100 rounded-full flex items-center justify-center transition-colors">
+              <svg class="size-[30px] not-sm:size-[25px] " fill="#000000" width="64px" height="64px" viewBox="0 0 512 512" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Drill"> <g id="XMLID_1044_"> <polygon id="XMLID_1045_" points="71.6,418 126.798,418 130.852,395 75.654,395 "></polygon> <polygon id="XMLID_1056_" points="79.17,376 134.369,376 155.61,255 100.41,255 "></polygon> <path d="M92.052,235H93V94H75.888c-39.07,0-70.856,31.43-70.856,70.5c0,39.071,31.786,70.5,70.856,70.5H92.052z" id="XMLID_1057_"></path> <path d="M166.047,311h38.075c9.955,0,17.878-8.406,17.878-18.362V255h-46.158L166.047,311z" id="XMLID_1058_"></path> <polygon id="XMLID_1059_" points="339,192 363,192 363,180.569 363,137.465 363,125 339,125 "></polygon> <polygon id="XMLID_1060_" points="383,147 383,170 495.379,170 506.968,147 "></polygon> <path d="M113,235h54.484H319v-32.879v-86.207V94H113V235z M167.423,127h86.675c5.502,0,9.963,4.498,9.963,10 s-4.461,10-9.963,10h-86.675c-5.502,0-9.963-4.498-9.963-10S161.921,127,167.423,127z M167.423,181h86.675 c5.502,0,9.963,4.498,9.963,10s-4.461,10-9.963,10h-86.675c-5.502,0-9.963-4.498-9.963-10S161.921,181,167.423,181z" id="XMLID_1063_"></path> </g> </g> <g id="Layer_1"></g> </g></svg>
+            </div>
+            <div class="mt-2.5">
+              <h2 class="font-semibold">Демонтаж конструкций</h2>
+              <p class="text-gray-500 text-sm">Быстрая и качественная сборка мебели</p>
+            </div>
+          </li>
+        </a>
+        <a href="/src/vynos-musora.html">
+          <li class="group w-[340px] p-2.5 cursor-pointer hover:bg-black/10 active:bg-black/10 rounded-xl transition-colors">
+            <div class="group-hover:bg-yellow-200 group-active:bg-yellow-200 size-[65px] not-sm:size-[55px] bg-yellow-100 rounded-full flex items-center justify-center transition-colors">
+              <svg class="size-[30px] not-sm:size-[25px]" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18 6V16.2C18 17.8802 18 18.7202 17.673 19.362C17.3854 19.9265 16.9265 20.3854 16.362 20.673C15.7202 21 14.8802 21 13.2 21H10.8C9.11984 21 8.27976 21 7.63803 20.673C7.07354 20.3854 6.6146 19.9265 6.32698 19.362C6 18.7202 6 17.8802 6 16.2V6M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </div>
+            <div class="mt-2.5">
+              <h2 class="font-semibold">Вынос мусора</h2>
+              <p class="text-gray-500 text-sm">Быстрая и качественная сборка мебели</p>
+            </div>
+          </li>
+          </a>
+        </ul>
+        
+      </div>
+      
+      <!--advantages-section-->
+      <!-- <div class="mt-12.5 max-w-[1440px] m-auto p-5">
+        <h2>Почему выбирают нас?</h2>
+        <p class="">Вот несколько причин, почему клиенты доверяют нам.</p>
+      </div> -->
+
+      <!--our-works-section-->
+      <div class="bg-gray-100">
+      <div class="max-w-[1440px] m-auto p-10">
+        <h2 class="text-center font-medium text-3xl sm:text-4xl">Несколько рабочих моментов из нашей компании</h2>
+        <div class="mt-10 grid gap-4  lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+          <ul class="grid rounded-2xl gap-4 h-fit">
+            <li><img class="rounded-2xl" src="../imgs/img2.jpg" alt=""></li>
+            <li><img class="rounded-2xl" src="../imgs/img4.jpg" alt=""></li>
+          </ul>
+          <ul class="rounded-2xl grid gap-4 h-fit">
+            <li><img class="rounded-2xl" src="../imgs/img3.jpg" alt=""></li>
+            <li><video class="rounded-2xl" controls src="../videos/video3.mp4"></video></li>
+          </ul>
+          <ul class="rounded-2xl grid gap-4 h-fit">
+            <li>
+              <video class="rounded-2xl" controls src="../videos/video2.mp4"></video>      
+            </li>
+            <li>
+              <img class="rounded-2xl" src="../imgs/img6.jpg" alt="">
+            </li>
+          </ul>
+          <ul class="rounded-2xl grid gap-4 h-fit">
+            <li>
+              <img class="rounded-2xl" src="../imgs/img5.jpg" alt="">
+            </li>
+            </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+      <!--prices-section-->
+      <div class="max-w-[1440px] m-auto p-10" id="prices-section">
+        <h2 class="text-center font-medium text-3xl sm:text-4xl">Цены на услуги</h2>
+        <p class="text-center text-gray-500">Прозрачное ценообразование без лишних доплат</p>
+        <ul class="mt-10 grid gap-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 h-fit ">
+          <li class="px-5 py-10 bg-white rounded-2xl border border-gray-200 hover:border-yellow-300">
+            <h2 class="font-medium text-2xl text-center">Грузчики</h2>
+            <p class="text-lg text-gray-500 text-center">от <strong class="text-2xl text-black">700</strong> ₽/час</p>
+            <ul class="mt-10 grid justify-center">
+              <li>
+                <h2>Погрузка/разгрузка</h2>
+              </li>
+              <li>
+                <h2>Подъём на этаж</h2>
+              </li>
+              <li>
+                <h2>Сборка/разборка мебели</h2>
+              </li>
+            </ul>
+
+            <div class="mt-10 flex justify-center items-center">
+              <button class="py-2.5 px-5 bg-[#feff00] shadow-lg rounded-xl cursor-pointer font-medium transition-all hover:translate-y-[-5px]">Заказать грузчиков</button>
+            </div>
+          </li>
+
+          <li class="px-5 py-10 bg-white rounded-2xl border border-gray-200 hover:border-yellow-300">
+            <h2 class="font-medium text-2xl text-center">Квартирный переезд</h2>
+            <p class="text-lg text-gray-500 text-center">от <strong class="text-2xl text-black">15 000</strong> ₽</p>
+            <ul class="mt-10 grid justify-center">
+              <li>
+                <h2>Погрузка/разгрузка</h2>
+              </li>
+              <li>
+                <h2>Подъём на этаж</h2>
+              </li>
+              <li>
+                <h2>Сборка/разборка мебели</h2>
+              </li>
+            </ul>
+
+            <div class="mt-10 flex justify-center items-center">
+              <button
+              data-service="Квартирный переезд"
+              onclick="event.preventDefault()"
+              class="order-btn py-2.5 w-[190px] bg-[#feff00] shadow-lg rounded-xl cursor-pointer font-medium transition-all hover:translate-y-[-5px]">Заказать</button>
+            </div>
+          </li>
+
+          <li class="px-5 py-10 bg-white rounded-2xl border border-gray-200 hover:border-yellow-300">
+            <h2 class="font-medium text-2xl text-center">Офисный переезд</h2>
+            <p class="text-lg text-gray-500 text-center">от <strong class="text-2xl text-black">20 000</strong> ₽</p>
+            <ul class="mt-10 grid justify-center">
+              <li>
+                <h2>Погрузка/разгрузка</h2>
+              </li>
+              <li>
+                <h2>Подъём на этаж</h2>
+              </li>
+              <li>
+                <h2>Сборка/разборка мебели</h2>
+              </li>
+            </ul>
+
+            <div class="mt-10 flex justify-center items-center">
+              <button
+              data-service="Офисный переезд"
+              onclick="event.preventDefault()"
+              class="order-btn py-2.5 w-[190px] bg-[#feff00] shadow-lg rounded-xl cursor-pointer font-medium transition-all hover:translate-y-[-5px]">Заказать</button>
+            </div>
+          </li>
+
+          <li class="px-5 py-10 bg-white rounded-2xl border border-gray-200 hover:border-yellow-300">
+            <h2 class="font-medium text-2xl text-center">Сборка мебели</h2>
+            <p class="text-lg text-gray-500 text-center">от <strong class="text-2xl text-black">3000</strong> ₽</p>
+            <ul class="mt-10 grid justify-center">
+              <li>
+                <h2>Погрузка/разгрузка</h2>
+              </li>
+              <li>
+                <h2>Подъём на этаж</h2>
+              </li>
+              <li>
+                <h2>Сборка/разборка мебели</h2>
+              </li>
+
+              <div class="mt-10 flex justify-center items-center">
+                <button
+                data-service="Сборка мебели"
+                onclick="event.preventDefault()"
+                class="order-btn py-2.5 w-[190px] bg-[#feff00] shadow-lg rounded-xl cursor-pointer font-medium transition-all hover:translate-y-[-5px]">Заказать</button>
+              </div>
+            </ul>
+
+            <li class="px-5 py-10 bg-white rounded-2xl border border-gray-200 hover:border-yellow-300">
+              <h2 class="font-medium text-2xl text-center">Сбор и вывоз металлолома</h2>
+              <p class="text-lg text-gray-500 text-center">от <strong class="text-2xl text-black">800</strong> ₽/час</p>
+              <ul class="mt-10 grid justify-center">
+                <li>
+                  <h2>Погрузка/разгрузка</h2>
+                </li>
+                <li>
+                  <h2>Подъём на этаж</h2>
+                </li>
+                <li>
+                  <h2>Сборка/разборка мебели</h2>
+                </li>
+              </ul>
+  
+            <div class="mt-10 flex justify-center items-center">
+              <button
+              data-service="Сбор и вывоз металлолома"
+              onclick="event.preventDefault()"
+              class="order-btn py-2.5 w-[190px] bg-[#feff00] shadow-lg rounded-xl cursor-pointer font-medium transition-all hover:translate-y-[-5px]">Заказать</button>
+            </div>
+          </li>
+
+          <li class="px-5 py-10 bg-white rounded-2xl border border-gray-200 hover:border-yellow-300">
+            <h2 class="font-medium text-2xl text-center">Демонтаж металлоконструкций</h2>
+            <p class="text-lg text-gray-500 text-center">от <strong class="text-2xl text-black">2000</strong> ₽/тонна</p>
+            <ul class="mt-10 grid justify-center">
+              <li>
+                <h2>Погрузка/разгрузка</h2>
+              </li>
+              <li>
+                <h2>Подъём на этаж</h2>
+              </li>
+              <li>
+                <h2>Сборка/разборка мебели</h2>
+              </li>
+
+              
+            </ul>
+
+            <div
+            class="mt-10 flex justify-center items-center">
+              <button
+              data-service="Демонтаж конструкции"
+              onclick="event.preventDefault()"
+              class="order-btn py-2.5 w-[190px] bg-[#feff00] shadow-lg rounded-xl cursor-pointer font-medium transition-all hover:translate-y-[-5px]">Заказать</button>
+            </div>
+          </li>
+
+          <li class="px-5 py-10 bg-white rounded-2xl border border-gray-200 hover:border-yellow-300">
+            <h2 class="font-medium text-2xl text-center h-[64px] items-center flex justify-center">Вынос мусора</h2>
+            <p class="text-lg text-gray-500 text-center">от <strong class="text-2xl text-black">700</strong> ₽/час</p>
+            <ul class="mt-10 grid justify-center">
+              <li>
+                <h2>Погрузка/разгрузка</h2>
+              </li>
+              <li>
+                <h2>Подъём на этаж</h2>
+              </li>
+              <li>
+                <h2>Сборка/разборка мебели</h2>
+              </li>
+            </ul>
+
+            <div
+            class="mt-10 flex justify-center items-center">
+              <button
+              data-service="Вынос мусора"
+              onclick="event.preventDefault()"
+              class="order-btn py-2.5 w-[190px] bg-[#feff00] shadow-lg rounded-xl cursor-pointer font-medium transition-all hover:translate-y-[-5px]">Заказать</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!--reviews-section-->
+      <div class="max-w-[1440px] m-auto p-10" id="reviews-section">
+        <h2 class="text-center font-medium text-3xl sm:text-4xl">Отзывы наших клиентов</h2>
+        
+        <div class="swiper w-full mt-5">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide w-[335px] p-5 border border-gray-200 rounded-2xl  hover:border-yellow-300">
+        <div class="flex gap-0.25">
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="mt-2.5 h-[185px]">
+          <h2 class="italic">“Переезжали с помощью этих ребят всей семьёй. Очень доволны! Аккуратно, быстро и по честной цене. Мебель довезли в целости и сохранности. Рекомендую!”</h2>
+        </div>
+        <div class="flex gap-2.5 w-full h-[35px] items-center">
+          <div class="flex justify-center items-center text-white size-[35px] rounded-full bg-[#A500E0] font-[Roboto]">
+            АП
+          </div>
+          <div class="">
+            <h2>Анна Петровна</h2>
+            <h2 class="text-gray-500">Клиент</h2>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide w-[335px] p-5 border border-gray-200 rounded-2xl hover:border-yellow-300">
+        <div class="flex gap-0.25">
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="mt-2.5 h-[185px]">
+          <h2 class="italic">“Пользовались услугами этой компании для перевозки крупной техники (холодильник, стиральная машина). Всё было сделано очень аккуратно — ни царапины, ни потертостей на технике. Спасибо большое!”</h2>
+        </div>
+        <div class="flex gap-2.5 w-full h-[35px] items-center">
+          <div class="flex justify-center items-center text-white size-[35px] rounded-full bg-[#A500E0] font-[Roboto]">
+            МИ
+          </div>
+          <div class="">
+            <h2>Михаил Иванов</h2>
+            <h2 class="text-gray-500">Клиент</h2>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide w-[335px] p-5 border border-gray-200 rounded-2xl hover:border-yellow-300">
+        <div class="flex gap-0.25">
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="mt-2.5 h-[185px]">
+          <h2 class="italic">“Нужно было вывезти металлолом с дачи. Обратился в эту компанию — всё сделали оперативно и недорого. Сотрудники также помогли разобрать старый металлический забор. Очень доволен результатом!”</h2>
+        </div>
+        <div class="flex gap-2.5 w-full h-[35px] items-center">
+          <div class="flex justify-center items-center text-white size-[35px] rounded-full bg-[#A500E0] font-[Roboto]">
+            АЛ
+          </div>
+          <div class="">
+            <h2>Александр Лебедев</h2>
+            <h2 class="text-gray-500">Клиент</h2>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide w-[335px] p-5 border border-gray-200 rounded-2xl hover:border-yellow-300">
+        <div class="flex gap-0.25">
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="mt-2.5 h-[185px]">
+          <h2 class="italic">“Заказывал услугу по выносу строительного мусора после ремонта. Всё быстро собрали и вывезли”</h2>
+        </div>
+        <div class="flex gap-2.5 w-full h-[35px] items-center">
+          <div class="flex justify-center items-center text-white size-[35px] rounded-full bg-[#A500E0] font-[Roboto]">
+            КС
+          </div>
+          <div class="">
+            <h2>Кирилл Смирнов</h2>
+            <h2 class="text-gray-500">Клиент</h2>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide w-[335px] p-5 border border-gray-200 rounded-2xl hover:border-yellow-300">
+        <div class="flex gap-0.25">
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <svg height="13" width="15" fill="none" viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_41_7)">
+              <path d="M11.5973 13C11.419 13 11.2417 12.9504 11.089 12.8517L7.50009 10.5201L3.91113 12.8517C3.76244 12.9487 3.58374 13.0005 3.40056 12.9999C3.21738 12.9994 3.03909 12.9463 2.89114 12.8486C2.74305 12.7512 2.63259 12.6142 2.57548 12.4567C2.51837 12.2993 2.51752 12.1296 2.57305 11.9716L3.91157 8.05808L0.354822 5.78755C0.207417 5.689 0.0979459 5.55096 0.0418925 5.39296C-0.0141608 5.23495 -0.0139588 5.06498 0.0424702 4.90708C0.0993442 4.74957 0.209422 4.61223 0.357147 4.51448C0.504871 4.41673 0.682771 4.36351 0.865703 4.36234L5.27083 4.35634L6.67333 0.53989C6.73121 0.38267 6.84222 0.24593 6.99064 0.149035C7.13906 0.0521396 7.31737 0 7.50031 0C7.68326 0 7.86156 0.0521396 8.00998 0.149035C8.1584 0.24593 8.26942 0.38267 8.32729 0.53989L9.70597 4.35634L14.1336 4.36234C14.3167 4.36327 14.4949 4.41646 14.6428 4.51436C14.7907 4.61226 14.9007 4.74988 14.9573 4.90769C15.0139 5.06548 15.0142 5.23543 14.9581 5.39338C14.9021 5.55133 14.7925 5.68926 14.6449 5.78755L11.0882 8.05808L12.4267 11.9716C12.4823 12.1295 12.4816 12.2992 12.4246 12.4567C12.3675 12.6141 12.2571 12.7512 12.109 12.8486C11.9606 12.9472 11.7813 13.0002 11.5973 13Z" fill="#FFAC33"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_41_7">
+                <rect height="13" width="15" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="mt-2.5 h-[185px]">
+          <h2 class="italic">“Переезжали с помощью этих ребят всей семьёй. Очень доволны! Аккуратно, быстро и по честной цене. Мебель довезли в целости и сохранности. Рекомендую!”</h2>
+        </div>
+        <div class="flex gap-2.5 w-full h-[35px] items-center">
+          <div class="flex justify-center items-center text-white size-[35px] rounded-full bg-[#A500E0] font-[Roboto]">
+            АП
+          </div>
+          <div class="">
+            <h2>Анна Петровна</h2>
+            <h2 class="text-gray-500">Клиент</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div> 
+      </div> 
+      </div>
+
+      <!--request-section-->
+      <div class="bg-[#F2F2F2] relative w-full not-xl:bg-linear-to-r to-orange-300 from-orange-400" id="leave-a-request">
+        <div class="max-w-[1440px] px-5 m-auto mt-10 mb-10 h-auto bg-cover bg-center  not-xl:bg-[url('../imgs/theme2.png')]">
+          <div class="w-full h-full flex items-center">
+            <form id="requestForm" class="max-w-[511px] p-5 xl:p-0">
+              <h2 class="font-medium text-3xl sm:text-4xl">Заказать <b class="text-[#FFDB56]">услуги</b></h2>
+              <p class="text-xl text-gray-500 not-xl:text-white">Оставьте заявку и мы свяжемся с вами в ближайшее время для уточнения всех деталей.</p>
+              <ul class="mt-2.5 bg-white rounded-2xl p-2.5 border border-gray-200 grid gap-y-2.5">
+                <li class="grid">
+                  <h2 class="text-lg not-sm:text-base">Имя</h2>
+                  <input
+                  name="name" 
+                  class="placeholder:text-gray-500 text-base not-sm:text-sm border border-gray-200 rounded-xl px-[15px] flex items-center py-[13px] ring-2 outline-0 focus:ring-[#FFDB56] transition-all ring-transparent" 
+                  type="text" 
+                  placeholder="Ваше имя">
+                </li>
+                <li class="grid">
+                  <h2 class="text-lg not-sm:text-base">Телефон</h2>
+                  <input 
+                  name="phone"
+                  class="placeholder:text-gray-500 text-base not-sm:text-sm border border-gray-200 rounded-xl px-[15px] flex items-center py-[13px] ring-2 outline-0 focus:ring-[#FFDB56] transition-all ring-transparent" 
+                  type="text" 
+                  placeholder="+7 (___)-___-__-__">
+                  
+                </li>
+                <li class="grid">
+                  <h2 class="text-lg not-sm:text-base">Адрес</h2>
+                  <input 
+                  name="address"
+                  class="placeholder:text-gray-500 text-base not-sm:text-sm border border-gray-200 rounded-xl px-[15px] flex items-center py-[13px] ring-2 outline-0 focus:ring-[#FFDB56] transition-all ring-transparent" 
+                  type="text" 
+                  placeholder="">
+                                  </li>
+                <!--Услуга-->
+                <li class="grid">
+                  <h2 class="text-lg not-sm:text-base">Услуга</h2>
+                  <ul class=" grid grid-cols-2 not-sm:grid-cols-1 justify-between">
+                    <li class="flex items-center gap-1.25">
+                      <input id="service_1" name="service" value="Квартирный переезд" class="custom-radio ring-0 border-0 bg-[#FFDB56] focus:bg-amber-300 outline-0 checked:ring-amber-700"
+                      type="radio">
+                      <label for="service_1" class="text-gray-500 text-[15px]">Квартирный переезд</label>
+                    </li>
+                    <li class="flex items-center gap-1.25">
+                      <input id="service_7" name="service" value="Офисный переезд" class="custom-radio ring-0 border-0 bg-[#FFDB56] focus:bg-amber-300 outline-0 checked:ring-amber-700"
+                      type="radio">
+                      <label for="service_7" class="text-gray-500 text-[15px]">Офисный переезд</label>
+                    </li>
+                    <li class="flex items-center gap-1.25">
+                      <input id="service_2" class="custom-radio" name="service" value="Сборка мебели" type="radio">
+                      <label for="service_2" class="text-gray-500 text-[15px]">Сборка мебели</label>
+                    </li>
+                    <li class="flex items-center gap-1.25">
+                      <input id="service_3" class="custom-radio" name="service" value="Доставка мебели" type="radio">
+                      <label for="service_3" class="text-gray-500 text-[15px]">Доставка мебели</label>
+                    </li>
+                    <li class="flex items-center  gap-1.25">
+                      <input id="service_4" class="custom-radio" name="service" value="Демонтаж конструкции"  type="radio">
+                      <label for="service_4" class="text-gray-500 text-[15px]">Демонтаж конструкции</label>
+                    </li>
+                    <li class="flex items-center gap-1.25">
+                      <input id="service_5" class="custom-radio" name="service" value="Сбор и вывоз металлолома"  type="radio">
+                      <label for="service_5" class="text-gray-500 text-[15px]">Сбор и вывоз металлолома</label>
+                    </li>
+                    <li class="flex items-center gap-1.25">
+                      <input id="service_6" class="custom-radio" name="service" value="Вынос мусора"  type="radio">
+                      <label for="service_6" class="text-gray-500 text-[15px]">Вынос мусора</label>
+                    </li>
+                    
+                  </ul>
+                </li>
+                <li class="grid">
+                  <div class="flex justify-between items-center">
+                    <h2 class="text-lg not-sm:text-base">Комментарий</h2>
+                  <h2 class="text-gray-500 text-sm not-sm:text-xs">Необязательное</h2>
+                  </div>
+                  <textarea
+                  name="comment"
+                  placeholder="Дополнительная информация о заказе"
+                  class="border border-gray-200 rounded-2xl h-[80px] py-1.25 px-2.5 resize-none ring-2 outline-0 focus:ring-[#FFDB56] transition-all ring-transparent"></textarea>
+                </li>
+                <li class="grid">
+                  <p class="text-sm text-red-500" id="errorMessage"></p>
+                </li>
+                <li class="grid justify-center">
+                  <button
+                  
+                  class="bg-[#FFDB56]  py-2.5 px-25 not-sm:px-10 rounded-lg shadow-base cursor-pointer hover:bg-amber-300 transition-colors">Оставить заявку</button>
+                </li>
+                <li class="grid justify-center"><p class="text-xs">Нажимая кнопку вы подтверждаете согласие на обработку персональных данных</p></li>
+              </ul>
+            </form>
+            <div class="overflow-hidden xl:flex hidden">
+          
+              <img class="min-w-[881px] min-h-[745px]" src="../imgs/PictureRequest.png" alt="">
+            </div>
+
+            <!-- <img class="absolute bottom-0 right-0 min-w-[1391px] h-[748px]" src="../imgs/requestBG.png" alt=""> -->
+          </div>
+        </div>
+      </div>
+
+      <!--contacts-section-->
+      <div
+      id="contacts-section"
+      class="max-w-[1440px] px-5 py-7.5 m-auto mt-10 h-auto bg-[url(../imgs/themeForContacts.png)] bg-center bg-cover">
+        <h2 class="text-center font-medium text-3xl sm:text-4xl">Связь с нами</h2>
+        <p class="text-center text-gray-500">Выберите удобный способ связи</p>
+        <ul class="mt-5 gap-5 max-w-[800px] m-auto grid grid-cols-2 not-sm:grid-cols-1">
+          <li class="grid gap-1.25 p-5 bg-white border border-gray-200 rounded-2xl hover:translate-y-[-5px] hover:shadow-sm transition-all">
+            <div class="size-[60px] flex items-center justify-center bg-linear-to-tr from-blue-400 to-blue-500 rounded-xl">
+              <svg class="size-[40px]" width="64px" height="64px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M41.4193 7.30899C41.4193 7.30899 45.3046 5.79399 44.9808 9.47328C44.8729 10.9883 43.9016 16.2908 43.1461 22.0262L40.5559 39.0159C40.5559 39.0159 40.3401 41.5048 38.3974 41.9377C36.4547 42.3705 33.5408 40.4227 33.0011 39.9898C32.5694 39.6652 24.9068 34.7955 22.2086 32.4148C21.4531 31.7655 20.5897 30.4669 22.3165 28.9519L33.6487 18.1305C34.9438 16.8319 36.2389 13.8019 30.8426 17.4812L15.7331 27.7616C15.7331 27.7616 14.0063 28.8437 10.7686 27.8698L3.75342 25.7055C3.75342 25.7055 1.16321 24.0823 5.58815 22.459C16.3807 17.3729 29.6555 12.1786 41.4193 7.30899Z" fill="white"></path> </g></svg>
+            </div>
+            <h2 class="font-medium text-xl">Telegram</h2>
+            <a href="https://t.me/+79099421050" class="text-blue-500">Написать в Telegram →</a>
+          </li>
+
+          <li class="grid gap-1.25 p-5 bg-white border border-gray-200 rounded-2xl hover:translate-y-[-5px] hover:shadow-sm transition-all">
+            <div class="size-[60px] flex items-center justify-center bg-linear-to-tr from-green-400 to-green-500 rounded-xl">
+              <svg class="size-[40px]" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z" fill="white"></path> </g></svg>
+            </div>
+            <h2 class="font-medium text-xl">WhatsApp</h2>
+            <a href="https://wa.me/79099421050" class="text-green-500">Написать в WhatsApp →</a>
+          </li>
+
+          <li class="grid gap-1.25 p-5 bg-white border border-gray-200 rounded-2xl hover:translate-y-[-5px] hover:shadow-sm transition-all">
+            <div class="size-[60px] flex items-center justify-center bg-linear-to-tr from-lime-400 to-lime-500 rounded-xl">
+              <svg class="size-[35px] pt-[3px]" height="50" width="53" fill="none" viewBox="0 0 53 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M36.3453 33.814L37.56 32.6145L34.7394 29.7972L33.525 30.9967L36.3453 33.814ZM41.6389 32.112L46.7336 34.8629L48.644 31.3726L43.5493 28.6217L41.6389 32.112ZM47.7144 40.3301L43.9261 44.0713L46.7464 46.8886L50.5346 43.1474L47.7144 40.3301ZM41.6178 45.2758C37.7514 45.6337 27.7482 45.3148 16.9178 34.6187L14.0974 37.436C25.9162 49.1081 37.165 49.6781 41.989 49.2315L41.6178 45.2758ZM16.9178 34.6187C6.5941 24.4232 4.88399 15.8479 4.67111 12.1277L0.677567 12.3531C0.945461 17.0354 3.06298 26.5386 14.0974 37.436L16.9178 34.6187ZM20.5853 18.2496L21.3501 17.4942L18.5298 14.677L17.765 15.4323L20.5853 18.2496ZM21.9589 7.866L18.5964 3.4047L15.3943 5.78564L18.7568 10.247L21.9589 7.866ZM7.28698 2.43368L3.10138 6.56732L5.92175 9.38458L10.1074 5.25094L7.28698 2.43368ZM19.1752 16.8409C17.765 15.4323 17.7631 15.4342 17.7612 15.4361C17.7605 15.4367 17.7586 15.4387 17.7573 15.44C17.7547 15.4426 17.752 15.4452 17.7493 15.448C17.7439 15.4534 17.7383 15.4591 17.7326 15.4651C17.721 15.477 17.7088 15.4898 17.6959 15.5037C17.6702 15.5314 17.642 15.5632 17.6117 15.599C17.5513 15.6707 17.4828 15.7589 17.4108 15.8644C17.2664 16.076 17.1091 16.3558 16.9757 16.7076C16.7033 17.4255 16.5573 18.3719 16.7404 19.5438C17.0983 21.8356 18.6874 24.8628 22.7581 28.8829L25.5784 26.0656C21.769 22.3035 20.8616 20.014 20.693 18.9347C20.6128 18.4211 20.696 18.1683 20.7189 18.1084C20.7328 18.0714 20.7394 18.0676 20.7224 18.0929C20.7138 18.1052 20.6997 18.1246 20.6776 18.1507C20.6666 18.1638 20.6536 18.1785 20.6384 18.195C20.6306 18.2032 20.6226 18.2119 20.6136 18.221C20.6093 18.2255 20.6048 18.2302 20.6 18.2349C20.5976 18.2373 20.5952 18.2397 20.5928 18.2422C20.5917 18.2434 20.5898 18.2453 20.589 18.2459C20.5872 18.2477 20.5853 18.2496 19.1752 16.8409ZM22.7581 28.8829C26.8301 32.9042 29.8922 34.4693 32.2034 34.8216C33.3845 35.0014 34.3368 34.8578 35.0592 34.5906C35.4133 34.4595 35.6954 34.3051 35.9088 34.1631C36.0154 34.0921 36.1045 34.0246 36.1768 33.965C36.213 33.9353 36.245 33.9075 36.273 33.8821C36.2872 33.8694 36.3002 33.8575 36.3122 33.8461C36.3184 33.8403 36.324 33.8347 36.3296 33.8294C36.3322 33.8267 36.3349 33.8241 36.3376 33.8214C36.3389 33.8201 36.341 33.8183 36.3416 33.8177C36.3434 33.8159 36.3453 33.814 34.9352 32.4052C33.525 30.9967 33.5269 30.9949 33.5288 30.993C33.5293 30.9925 33.5312 30.9906 33.5325 30.9893C33.5349 30.9869 33.5373 30.9845 33.5397 30.9821C33.5448 30.9776 33.5493 30.9731 33.5538 30.9686C33.5632 30.9599 33.572 30.952 33.5802 30.9443C33.5968 30.9294 33.6117 30.9165 33.625 30.9059C33.6512 30.8842 33.6706 30.8704 33.6826 30.8622C33.7074 30.8457 33.7024 30.8532 33.6629 30.8677C33.5976 30.8918 33.336 30.9747 32.8101 30.8945C31.708 30.7268 29.3866 29.8263 25.5784 26.0656L22.7581 28.8829ZM18.5964 3.4047C15.8782 -0.2016 10.5332 -0.772241 7.28698 2.43368L10.1074 5.25094C11.5252 3.8507 14.0432 3.99322 15.3943 5.78564L18.5964 3.4047ZM4.67111 12.1277C4.61866 11.211 5.04197 10.2534 5.92175 9.38458L3.10138 6.56732C1.66853 7.98238 0.542074 9.98552 0.677567 12.3531L4.67111 12.1277ZM43.9261 44.0713C43.1933 44.7951 42.4077 45.2027 41.6178 45.2758L41.989 49.2315C43.948 49.0501 45.553 48.0672 46.7464 46.8886L43.9261 44.0713ZM21.3501 17.4942C23.9754 14.9014 24.1706 10.8004 21.9589 7.866L18.7568 10.247C19.8328 11.6745 19.6728 13.5482 18.5298 14.677L21.3501 17.4942ZM46.7336 34.8629C48.9144 36.0404 49.2541 38.8093 47.7144 40.3301L50.5346 43.1474C54.1088 39.6176 53.0066 33.728 48.644 31.3726L46.7336 34.8629ZM37.56 32.6145C38.584 31.6032 40.2322 31.3527 41.6389 32.112L43.5493 28.6217C40.6597 27.0614 37.0736 27.4924 34.7394 29.7972L37.56 32.6145Z" fill="white"/>
+              </svg>
+            </div>
+            <h2 class="font-medium text-xl">Телефон</h2>
+            <a href="tel:+79099421050" class="text-lime-500">+7-909-942-10-50 →</a>
+          </li>
+
+          <li class="grid gap-1.25 p-5 bg-white border border-gray-200 rounded-2xl hover:translate-y-[-5px] hover:shadow-sm transition-all">
+            <div class="size-[60px] flex items-center justify-center bg-linear-to-tr from-red-400 to-red-500 rounded-xl">
+              <svg class="size-[40px]" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <rect x="3" y="5" width="18" height="14" rx="2" stroke="white" stroke-width="2" stroke-linecap="round"></rect> </g></svg>
+            </div>
+            <h2 class="font-medium text-xl">Email</h2>
+            <a class="text-red-500" href="mailto:Garbazhnik@mail.ru">Garbazhnik@mail.ru →</a>
+          </li>
+        </ul>
+      </div>
+
+      <!--company-address-section-->
+      <div class="max-w-[1440px] px-5 py-7.5 m-auto mt-10">
+        <h2 class="text-center font-medium text-3xl sm:text-4xl">Наш адрес</h2>
+        <p class="text-gray-500 text-center">г. Москва ул. Дубнинская 79 к. 5</p>
+        <div class="mt-5">
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A0c561ae15cbf2ef3a51fcc2650a1c560e98313bf666700ee0e4812d81a1fc1cd&amp;source=constructor"
+          class="w-full h-[500px] rounded-2xl"
+          frameborder="0"></iframe>
+        </div>
+      </div>
+  </main>
+    <footer class="w-full py-15">
+      <div class="max-w-[1440px] px-5 h-auto m-auto">
+        <ul
+          class="flex flex-wrap gap-7.5 lg:flex-nowrap justify-center md:gap-25 items-start"
+        >
+          <li class="grid w-[160px]">
+            <h2 class="font-medium text-lg mb-1.25">Услуги</h2>
+            <a href="../src/kvartirniy-pereezd.html" class="hover:text-orange-500 text-gray-500">Квартирный переезд</a>
+            <a href="../src/ofisniy-pereezd.html" class="hover:text-orange-500 text-gray-500">Офисный переезд</a>
+            <a href="../src/sborka-mebeli.html" class="hover:text-orange-500 text-gray-500">Сборка мебели</a>
+            <a href="../src/demontazh.html" class="hover:text-orange-500 text-gray-500">Демонтаж металлоконструкций</a>
+            <a href="../src/sbor-i-vyvoz-metalloloma.html" class="hover:text-orange-500 text-gray-500">Сбор и вывоз металлолома</a>
+            <a href="../src/vynos-musora.html" class="hover:text-orange-500 text-gray-500">Вынос мусора</a>
+          </li>
+
+          <li class="grid w-[160px]">
+            <h2 class="font-medium text-lg mb-1.25">Информация</h2>
+            <a href="#" class="hover:text-orange-500 text-gray-500">О компании</a>
+            <a href="./index.html#prices-section" class="hover:text-orange-500 text-gray-500" >Цены</a>
+            <a href="./index.html#reviews-section" class="hover:text-orange-500 text-gray-500">Отзывы</a>
+            <a href="#" class="hover:text-orange-500 text-gray-500">Контакты</a>
+          </li>
+
+          <li class="grid w-[160px]">
+            <h2 class="font-medium text-lg mb-1.25">Контакты</h2>
+            <a href="tel:+74951234567" class="hover:text-orange-500">+7-909-942-10-50</a>
+            <a href="mailto:Garbazhnik@mail.ru" class="hover:text-orange-500">Garbazhnik@mail.ru</a>
+          </li>
+        </ul>
+        <div class="mt-10 max-w-[800px] m-auto border-b border-b-gray-200"></div>
+        <div class="mt-10 max-w-[800px] m-auto flex justify-between">
+          <h2 class="text-gray-500 text-sm">© 2025 gruzchiki.shop. Все права защищены.</h2>
+          <div class="flex gap-1.25">
+            <svg class="size-[35px]" width="64px" height="64px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <path id="a" d="M1023.941 765.153c0 5.606-.171 17.766-.508 27.159-.824 22.982-2.646 52.639-5.401 66.151-4.141 20.306-10.392 39.472-18.542 55.425-9.643 18.871-21.943 35.775-36.559 50.364-14.584 14.56-31.472 26.812-50.315 36.416-16.036 8.172-35.322 14.426-55.744 18.549-13.378 2.701-42.812 4.488-65.648 5.3-9.402.336-21.564.505-27.15.505l-504.226-.081c-5.607 0-17.765-.172-27.158-.509-22.983-.824-52.639-2.646-66.152-5.4-20.306-4.142-39.473-10.392-55.425-18.542-18.872-9.644-35.775-21.944-50.364-36.56-14.56-14.584-26.812-31.471-36.415-50.314-8.174-16.037-14.428-35.323-18.551-55.744-2.7-13.378-4.487-42.812-5.3-65.649-.334-9.401-.503-21.563-.503-27.148l.08-504.228c0-5.607.171-17.766.508-27.159.825-22.983 2.646-52.639 5.401-66.151 4.141-20.306 10.391-39.473 18.542-55.426C34.154 93.24 46.455 76.336 61.07 61.747c14.584-14.559 31.472-26.812 50.315-36.416 16.037-8.172 35.324-14.426 55.745-18.549 13.377-2.701 42.812-4.488 65.648-5.3 9.402-.335 21.565-.504 27.149-.504l504.227.081c5.608 0 17.766.171 27.159.508 22.983.825 52.638 2.646 66.152 5.401 20.305 4.141 39.472 10.391 55.425 18.542 18.871 9.643 35.774 21.944 50.363 36.559 14.559 14.584 26.812 31.471 36.415 50.315 8.174 16.037 14.428 35.323 18.551 55.744 2.7 13.378 4.486 42.812 5.3 65.649.335 9.402.504 21.564.504 27.15l-.082 504.226z"></path> </defs> <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="512.001" y1=".978" x2="512.001" y2="1025.023"> <stop offset="0" stop-color="#61fd7d"></stop> <stop offset="1" stop-color="#2bb826"></stop> </linearGradient> <use xlink:href="#a" overflow="visible" fill="url(#b)"></use> <g> <path fill="#FFF" d="M783.302 243.246c-69.329-69.387-161.529-107.619-259.763-107.658-202.402 0-367.133 164.668-367.214 367.072-.026 64.699 16.883 127.854 49.017 183.522l-52.096 190.229 194.665-51.047c53.636 29.244 114.022 44.656 175.482 44.682h.151c202.382 0 367.128-164.688 367.21-367.094.039-98.087-38.121-190.319-107.452-259.706zM523.544 808.047h-.125c-54.767-.021-108.483-14.729-155.344-42.529l-11.146-6.612-115.517 30.293 30.834-112.592-7.259-11.544c-30.552-48.579-46.688-104.729-46.664-162.379.066-168.229 136.985-305.096 305.339-305.096 81.521.031 158.154 31.811 215.779 89.482s89.342 134.332 89.312 215.859c-.066 168.243-136.984 305.118-305.209 305.118zm167.415-228.515c-9.177-4.591-54.286-26.782-62.697-29.843-8.41-3.062-14.526-4.592-20.645 4.592-6.115 9.182-23.699 29.843-29.053 35.964-5.352 6.122-10.704 6.888-19.879 2.296-9.176-4.591-38.74-14.277-73.786-45.526-27.275-24.319-45.691-54.359-51.043-63.543-5.352-9.183-.569-14.146 4.024-18.72 4.127-4.109 9.175-10.713 13.763-16.069 4.587-5.355 6.117-9.183 9.175-15.304 3.059-6.122 1.529-11.479-.765-16.07-2.293-4.591-20.644-49.739-28.29-68.104-7.447-17.886-15.013-15.466-20.645-15.747-5.346-.266-11.469-.322-17.585-.322s-16.057 2.295-24.467 11.478-32.113 31.374-32.113 76.521c0 45.147 32.877 88.764 37.465 94.885 4.588 6.122 64.699 98.771 156.741 138.502 21.892 9.45 38.982 15.094 52.308 19.322 21.98 6.979 41.982 5.995 57.793 3.634 17.628-2.633 54.284-22.189 61.932-43.615 7.646-21.427 7.646-39.791 5.352-43.617-2.294-3.826-8.41-6.122-17.585-10.714z"></path> </g> </g></svg>
+            <svg class="size-[35px]" width="64px" height="64px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="16" cy="16" r="14" fill="url(#paint0_linear_87_7225)"></circle> <path d="M22.9866 10.2088C23.1112 9.40332 22.3454 8.76755 21.6292 9.082L7.36482 15.3448C6.85123 15.5703 6.8888 16.3483 7.42147 16.5179L10.3631 17.4547C10.9246 17.6335 11.5325 17.541 12.0228 17.2023L18.655 12.6203C18.855 12.4821 19.073 12.7665 18.9021 12.9426L14.1281 17.8646C13.665 18.3421 13.7569 19.1512 14.314 19.5005L19.659 22.8523C20.2585 23.2282 21.0297 22.8506 21.1418 22.1261L22.9866 10.2088Z" fill="white"></path> <defs> <linearGradient id="paint0_linear_87_7225" x1="16" y1="2" x2="16" y2="30" gradientUnits="userSpaceOnUse"> <stop stop-color="#37BBFE"></stop> <stop offset="1" stop-color="#007DBB"></stop> </linearGradient> </defs> </g></svg>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--sidebar-->
+    <div
+      class="fixed w-full h-full top-0 right-0 hidden justify-end opacity-0 bg-black/25 backdrop-blur-xs transition-all"
+      id="sidebar"
+    >
+      <div
+        class="sidebar-container w-2/3 h-full bg-white"
+        id="sidebar_container"
+      >
+        <ul class="mt-15">
+          <li class="group flex items-center gap-1.25 px-5 py-2.5 text-left hover:bg-black/20 active:bg-black/20" onclick="openList('list-1', 'list-1-arrow')">
+            <h2 class="font-medium text-lg">Услуги</h2>
+            <span><svg id="list-1-arrow" height="15" width="15" fill="none" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.56685 6.06918C3.32277 6.31325 3.32277 6.709 3.56685 6.95306L6.62447 10.0077C7.11272 10.4954 7.90384 10.4953 8.39184 10.0073L11.4483 6.95081C11.6924 6.70675 11.6924 6.311 11.4483 6.06693C11.2042 5.82285 10.8085 5.82285 10.5644 6.06693L7.94841 8.68294C7.70434 8.92706 7.30859 8.927 7.06453 8.68294L4.45073 6.06918C4.20666 5.8251 3.81092 5.8251 3.56685 6.06918Z" fill="#0F0F0F"/>
+            </svg></span>       
+          </li>
+          <div class="hidden" id="list-1">
+            <a href="/src/kvartirniy-pereezd.html" class="flex items-center gap-0.5 px-10 py-2.5 hover:bg-black/20 active:bg-black/20" href="">
+              Квартирный переезд
+              <span><svg class="size-[20px]" height="20" width="20" fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.875 11.2744L10 5.93813L3.125 11.2744V9.1L10 3.7625L16.875 9.09875V11.2744ZM15.1562 11.0806V16.2375H11.7188V12.8H8.28125V16.2375H4.84375V11.0813L10 7.21438L15.1562 11.0806Z" fill="black"/>
+              </svg></span>
+            </a>
+            <a href="/src/ofisniy-pereezd.html" class="flex items-center gap-0.5 px-10 py-2.5 hover:bg-black/20 active:bg-black/20" href="">
+              Офисный переезд
+              <span><svg class="size-[20px]" height="20" width="20" fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.875 11.2744L10 5.93813L3.125 11.2744V9.1L10 3.7625L16.875 9.09875V11.2744ZM15.1562 11.0806V16.2375H11.7188V12.8H8.28125V16.2375H4.84375V11.0813L10 7.21438L15.1562 11.0806Z" fill="black"/>
+              </svg></span>
+            </a>
+            <a href="/src/sborka-mebeli.html" class="flex items-center gap-0.5 px-10 py-2.5 hover:bg-black/20 active:bg-black/20" href="">Сборка мебели
+              <span><svg class="size-[20px]" width="64px" height="64px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><path class="cls-1" d="M12,8.2v5.73H5.32V12a1,1,0,0,0-1-.95h-1V8.2A2.87,2.87,0,0,1,6.27,5.34H9.14A2.87,2.87,0,0,1,12,8.2Z"></path><path class="cls-1" d="M21.55,11.07H19.64a1,1,0,0,0-1,.95v1.91H5.32V12a1,1,0,0,0-1-.95H2.45a1,1,0,0,0-1,.95v5.73h21V12A1,1,0,0,0,21.55,11.07Z"></path><path class="cls-1" d="M20.59,8.2v2.87h-.95a1,1,0,0,0-1,.95v1.91H12V8.2a2.87,2.87,0,0,1,2.86-2.86h2.87A2.87,2.87,0,0,1,20.59,8.2Z"></path><line class="cls-1" x1="2.45" y1="19.66" x2="2.45" y2="17.75"></line><line class="cls-1" x1="20.59" y1="19.66" x2="20.59" y2="17.75"></line></g></svg></span>
+            </a>
+            <a href="/src/sbor-i-vyvoz-metalloloma.html" class="flex items-center gap-0.5 px-10 py-2.5 hover:bg-black/20 active:bg-black/20" href="">Сбор и вывоз металлолома
+              <span><svg class="size-[20px]" width="64px" height="64px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#000000" d="M322.248 85.684L61.432 224.717l-41.145 109.94 7.233 3.85 153.673 81.8 308.495-164.215-37.752-99.903-129.688-70.506zm119.035 95.187l25.11 66.45-102.56 54.594L430.39 186.64l10.893-5.77zm-89.576 47.417L284.957 343.9l-41.67 22.182 72.195-118.62 36.225-19.175zM72.38 248.78l28.21 14.933-54.012 54.012L72.38 248.78zm210.827 15.767L211.19 382.87l.26.16-17.208 9.16 5.795-83.618 83.17-44.025zm-165.334 8.312l16.963 8.98-60.445 60.445-16.93-9.012 60.413-60.414zM181.42 306.9l-6.174 89.07-54.1-28.798 60.274-60.272z"></path></g></svg></span>
+            </a>
+            <a href="/src/demontazh.html" class="flex items-center gap-0.5 px-10 py-2.5 hover:bg-black/20 active:bg-black/20" href="">Демонтаж металлоконструкций
+              <span><svg class="size-[20px]" fill="#000000" width="64px" height="64px" viewBox="0 0 512 512" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Drill"> <g id="XMLID_1044_"> <polygon id="XMLID_1045_" points="71.6,418 126.798,418 130.852,395 75.654,395 "></polygon> <polygon id="XMLID_1056_" points="79.17,376 134.369,376 155.61,255 100.41,255 "></polygon> <path d="M92.052,235H93V94H75.888c-39.07,0-70.856,31.43-70.856,70.5c0,39.071,31.786,70.5,70.856,70.5H92.052z" id="XMLID_1057_"></path> <path d="M166.047,311h38.075c9.955,0,17.878-8.406,17.878-18.362V255h-46.158L166.047,311z" id="XMLID_1058_"></path> <polygon id="XMLID_1059_" points="339,192 363,192 363,180.569 363,137.465 363,125 339,125 "></polygon> <polygon id="XMLID_1060_" points="383,147 383,170 495.379,170 506.968,147 "></polygon> <path d="M113,235h54.484H319v-32.879v-86.207V94H113V235z M167.423,127h86.675c5.502,0,9.963,4.498,9.963,10 s-4.461,10-9.963,10h-86.675c-5.502,0-9.963-4.498-9.963-10S161.921,127,167.423,127z M167.423,181h86.675 c5.502,0,9.963,4.498,9.963,10s-4.461,10-9.963,10h-86.675c-5.502,0-9.963-4.498-9.963-10S161.921,181,167.423,181z" id="XMLID_1063_"></path> </g> </g> <g id="Layer_1"></g> </g></svg></span>
+            </a>
+            <a href="/src/vynos-musora.html" class="flex items-center gap-0.5 px-10 py-2.5 hover:bg-black/20 active:bg-black/20" href="">Вынос мусора
+              <span><svg class="size-[20px]" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18 6V16.2C18 17.8802 18 18.7202 17.673 19.362C17.3854 19.9265 16.9265 20.3854 16.362 20.673C15.7202 21 14.8802 21 13.2 21H10.8C9.11984 21 8.27976 21 7.63803 20.673C7.07354 20.3854 6.6146 19.9265 6.32698 19.362C6 18.7202 6 17.8802 6 16.2V6M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></span>
+            </a>
+          </div>   
+          <a href="/src/index.html#prices-section" class="flex items-center gap-1.25 px-5 py-2.5 text-left hover:bg-black/20 active:bg-black/20">
+            <h2 class="font-medium text-lg">Цены</h2>
+            <span><svg class="size-[15px]" height="21" width="24" fill="none" viewBox="0 0 24 21" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.8833 9.92989L10.104 8.56817C9.45473 8.3836 8.92872 7.86269 8.82599 7.19414C8.66572 6.15235 9.47527 5.25 10.4903 5.25H13.5231C14.1765 5.25 14.8175 5.45507 15.3477 5.82832C15.6107 6.01289 15.9641 5.98418 16.1901 5.7586L17.1312 4.81933C17.4106 4.54043 17.3818 4.07285 17.0695 3.83086C16.0545 3.04746 14.8217 2.625 13.5231 2.625H13.408V0.65625C13.408 0.295312 13.1121 0 12.7505 0H11.4355C11.0738 0 10.778 0.295312 10.778 0.65625V2.625H10.6752C8.65339 2.625 6.7877 3.92929 6.30279 5.88985C5.73157 8.19493 7.13289 10.4508 9.30267 11.0701L14.082 12.4318C14.7312 12.6164 15.2573 13.1373 15.36 13.8059C15.5203 14.8476 14.7107 15.75 13.6957 15.75H10.6629C10.0095 15.75 9.36844 15.5449 8.8383 15.1717C8.5753 14.9871 8.22189 15.0158 7.99588 15.2414L7.05481 16.1807C6.77537 16.4596 6.80414 16.9271 7.11646 17.1691C8.12737 17.9525 9.36021 18.375 10.6629 18.375H10.778V20.3437C10.778 20.7047 11.0738 21 11.4355 21H12.7505C13.1121 21 13.408 20.7047 13.408 20.3437V18.375H13.5107C15.5326 18.375 17.3983 17.0707 17.8832 15.1101C18.4544 12.8051 17.0531 10.5492 14.8833 9.92989Z" fill="black"/>
+            </svg></span>
+          </a>
+          <a href="/src/index.html#reviews-section" class="flex items-center gap-1.25 px-5 py-2.5 text-left hover:bg-black/20 active:bg-black/20">
+            <h2 class="font-medium text-lg">Отзывы</h2>
+            <span><svg class="size-[15px]" width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></g></svg></span>
+          </a>
+          <a href="/src/index.html#contacts-section" class="flex items-center gap-1.25 px-5 py-2.5 text-left hover:bg-black/20 active:bg-black/20">
+            <h2 class="font-medium text-lg">Контакты</h2>
+            <span></span>
+          </a>
+          <a href="/src/about.html" class="flex items-center gap-1.25 px-5 py-2.5 text-left hover:bg-black/20 active:bg-black/20">
+            <h2 class="font-medium text-lg">О компании</h2>
+          </a>
+        </ul>
+    </div>
+    </div>
+
+    <!--toast-tools-->
+    <div id="toast_section"
+    class="fixed bottom-4 right-4 flex flex-col gap-2 z-50 w-[265px]">
+      
+    </div>
+
+    <div id="toast" class="opacity-0 transition-opacity duration-300 bg-green-600 text-white rounded-lg px-5 py-3 text-sm w-full">
+      <h2 class="toast-text font-semibold text-white"></h2>
+    </div>  
+
+    <!--context-menu-->
+    <div
+    id="contacts_context_button"
+    onclick="openContactsContextMenu()"
+    class="cursor-pointer fixed bottom-2.5 right-2.5 size-[75px] not-sm:size-[55px] bg-linear-to-tr from-lime-400 to-lime-600 rounded-full flex justify-center items-center animate-pulse hover:animate-none transiton-all">
+      <svg class="size-[40px] not-sm:size-[35px]  pt-1" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 5.5C3 14.0604 9.93959 21 18.5 21C18.8862 21 19.2691 20.9859 19.6483 20.9581C20.0834 20.9262 20.3009 20.9103 20.499 20.7963C20.663 20.7019 20.8185 20.5345 20.9007 20.364C21 20.1582 21 19.9181 21 19.438V16.6207C21 16.2169 21 16.015 20.9335 15.842C20.8749 15.6891 20.7795 15.553 20.6559 15.4456C20.516 15.324 20.3262 15.255 19.9468 15.117L16.74 13.9509C16.2985 13.7904 16.0777 13.7101 15.8683 13.7237C15.6836 13.7357 15.5059 13.7988 15.3549 13.9058C15.1837 14.0271 15.0629 14.2285 14.8212 14.6314L14 16C11.3501 14.7999 9.2019 12.6489 8 10L9.36863 9.17882C9.77145 8.93713 9.97286 8.81628 10.0942 8.64506C10.2012 8.49408 10.2643 8.31637 10.2763 8.1317C10.2899 7.92227 10.2096 7.70153 10.0491 7.26005L8.88299 4.05321C8.745 3.67376 8.67601 3.48403 8.55442 3.3441C8.44701 3.22049 8.31089 3.12515 8.15802 3.06645C7.98496 3 7.78308 3 7.37932 3H4.56201C4.08188 3 3.84181 3 3.63598 3.09925C3.4655 3.18146 3.29814 3.33701 3.2037 3.50103C3.08968 3.69907 3.07375 3.91662 3.04189 4.35173C3.01413 4.73086 3 5.11378 3 5.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+    </div>
+
+    <div id="contacts_context_menu" class="fixed bottom-25 right-2.5 hidden w-[75px] h-auto border">
+      <ul class="grid gap-2.5">
+        <li class="grid justify-center items-center">
+          <svg class="size-[40px]" fill="#000000" width="64px" height="64px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>telegram</title> <path d="M22.122 10.040c0.006-0 0.014-0 0.022-0 0.209 0 0.403 0.065 0.562 0.177l-0.003-0.002c0.116 0.101 0.194 0.243 0.213 0.403l0 0.003c0.020 0.122 0.031 0.262 0.031 0.405 0 0.065-0.002 0.129-0.007 0.193l0-0.009c-0.225 2.369-1.201 8.114-1.697 10.766-0.21 1.123-0.623 1.499-1.023 1.535-0.869 0.081-1.529-0.574-2.371-1.126-1.318-0.865-2.063-1.403-3.342-2.246-1.479-0.973-0.52-1.51 0.322-2.384 0.221-0.23 4.052-3.715 4.127-4.031 0.004-0.019 0.006-0.040 0.006-0.062 0-0.078-0.029-0.149-0.076-0.203l0 0c-0.052-0.034-0.117-0.053-0.185-0.053-0.045 0-0.088 0.009-0.128 0.024l0.002-0.001q-0.198 0.045-6.316 4.174c-0.445 0.351-1.007 0.573-1.619 0.599l-0.006 0c-0.867-0.105-1.654-0.298-2.401-0.573l0.074 0.024c-0.938-0.306-1.683-0.467-1.619-0.985q0.051-0.404 1.114-0.827 6.548-2.853 8.733-3.761c1.607-0.853 3.47-1.555 5.429-2.010l0.157-0.031zM15.93 1.025c-8.302 0.020-15.025 6.755-15.025 15.060 0 8.317 6.742 15.060 15.060 15.060s15.060-6.742 15.060-15.060c0-8.305-6.723-15.040-15.023-15.060h-0.002q-0.035-0-0.070 0z"></path> </g></svg>
+        </li>
+        <li class="grid justify-center items-center">
+          <svg class="size-[40px]" fill="#000000" width="64px" height="64px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>telegram</title> <path d="M22.122 10.040c0.006-0 0.014-0 0.022-0 0.209 0 0.403 0.065 0.562 0.177l-0.003-0.002c0.116 0.101 0.194 0.243 0.213 0.403l0 0.003c0.020 0.122 0.031 0.262 0.031 0.405 0 0.065-0.002 0.129-0.007 0.193l0-0.009c-0.225 2.369-1.201 8.114-1.697 10.766-0.21 1.123-0.623 1.499-1.023 1.535-0.869 0.081-1.529-0.574-2.371-1.126-1.318-0.865-2.063-1.403-3.342-2.246-1.479-0.973-0.52-1.51 0.322-2.384 0.221-0.23 4.052-3.715 4.127-4.031 0.004-0.019 0.006-0.040 0.006-0.062 0-0.078-0.029-0.149-0.076-0.203l0 0c-0.052-0.034-0.117-0.053-0.185-0.053-0.045 0-0.088 0.009-0.128 0.024l0.002-0.001q-0.198 0.045-6.316 4.174c-0.445 0.351-1.007 0.573-1.619 0.599l-0.006 0c-0.867-0.105-1.654-0.298-2.401-0.573l0.074 0.024c-0.938-0.306-1.683-0.467-1.619-0.985q0.051-0.404 1.114-0.827 6.548-2.853 8.733-3.761c1.607-0.853 3.47-1.555 5.429-2.010l0.157-0.031zM15.93 1.025c-8.302 0.020-15.025 6.755-15.025 15.060 0 8.317 6.742 15.060 15.060 15.060s15.060-6.742 15.060-15.060c0-8.305-6.723-15.040-15.023-15.060h-0.002q-0.035-0-0.070 0z"></path> </g></svg>
+        </li>
+        <li class="grid justify-center items-center">
+          <svg class="size-[40px]" fill="#000000" width="64px" height="64px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>telegram</title> <path d="M22.122 10.040c0.006-0 0.014-0 0.022-0 0.209 0 0.403 0.065 0.562 0.177l-0.003-0.002c0.116 0.101 0.194 0.243 0.213 0.403l0 0.003c0.020 0.122 0.031 0.262 0.031 0.405 0 0.065-0.002 0.129-0.007 0.193l0-0.009c-0.225 2.369-1.201 8.114-1.697 10.766-0.21 1.123-0.623 1.499-1.023 1.535-0.869 0.081-1.529-0.574-2.371-1.126-1.318-0.865-2.063-1.403-3.342-2.246-1.479-0.973-0.52-1.51 0.322-2.384 0.221-0.23 4.052-3.715 4.127-4.031 0.004-0.019 0.006-0.040 0.006-0.062 0-0.078-0.029-0.149-0.076-0.203l0 0c-0.052-0.034-0.117-0.053-0.185-0.053-0.045 0-0.088 0.009-0.128 0.024l0.002-0.001q-0.198 0.045-6.316 4.174c-0.445 0.351-1.007 0.573-1.619 0.599l-0.006 0c-0.867-0.105-1.654-0.298-2.401-0.573l0.074 0.024c-0.938-0.306-1.683-0.467-1.619-0.985q0.051-0.404 1.114-0.827 6.548-2.853 8.733-3.761c1.607-0.853 3.47-1.555 5.429-2.010l0.157-0.031zM15.93 1.025c-8.302 0.020-15.025 6.755-15.025 15.060 0 8.317 6.742 15.060 15.060 15.060s15.060-6.742 15.060-15.060c0-8.305-6.723-15.040-15.023-15.060h-0.002q-0.035-0-0.070 0z"></path> </g></svg>
+        </li>
+      </ul>
+    </div>
+
+    <script src="../js/script1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/toast.js"></script>
+    <script src="../js/contacts-context-menu.js"></script>
+    <script src="../js/formAction.js"></script>
+    <style>
+      .swiper {
+        width: auto;
+        padding:20px;
+        height: 325px;
+        z-index: 0;
+      }      
+    </style>
+    <script src="../js/slider.js">
+    </script>
+    <script src="../js/form.js"></script>
+  </body>
+</html>
